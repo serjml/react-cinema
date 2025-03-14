@@ -1,19 +1,20 @@
 import logo from '../../assets/icons/pngwing.com.png';
 import heart from '../../assets/icons/icons8-червы-100.png';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
   return (
     <header>
-      <a className="header__logo-flex" href="./index.html">
+      <Link className="header__logo-flex" to="/">
         <img src={logo} alt="logo" />
         <div className="header__logo-flex_sitename">
           <p>REACT</p>
           <p>CINEMA</p>
         </div>
-      </a>
+      </Link>
       <ul className="header__navbar-flex">
-        <a href="./index.html">Home</a>
-        <a href="./favorites.html">Favorites</a>
+        <Link to="/">Home</Link>
+        <Link to="/favorites">Favorites</Link>
         <a href="#categoryes">Movies</a>
         <a href="#categoryes">FAQ</a>
         <a href="#categoryes">Help</a>
@@ -23,7 +24,7 @@ export const Header = () => {
           <img src={heart} alt="" />
           <p>0</p>
         </div>
-        <a href="./favorites.html">Account</a>
+        <Link to="favorites">Account</Link>
       </div>
     </header>
   );
