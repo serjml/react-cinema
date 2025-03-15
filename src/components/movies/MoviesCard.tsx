@@ -1,9 +1,10 @@
+import { Link } from 'react-router-dom';
 import star from '../../assets/icons/star.png';
-import filmImage from '../../assets/ImageFılm.jpg';
+import { MovieProps } from '../../types/MoviesTypes';
 
-export const MoviesCard = () => {
+export const MoviesCard: React.FC<MovieProps> = (props) => {
   return (
-    <a className="movies__card" href="./movie.html">
+    <Link className="movies__card" to="/movie">
       <div className="movies__card-rating">
         <img src={star} alt="" />
         <img src={star} alt="" />
@@ -11,7 +12,7 @@ export const MoviesCard = () => {
         <img src={star} alt="" />
         <img src={star} alt="" />
       </div>
-      <img src={filmImage} alt="" />
-    </a>
+      <img src={props.imageUrl} alt="" />
+    </Link>
   );
 };
